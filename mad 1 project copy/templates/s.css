@@ -1,0 +1,77 @@
+.container{
+    margin: 50px;
+    
+    height: 90vh;
+    padding: 0px;
+ 
+    border-radius: 10px;
+    display: flex;
+    flex-direction:column;
+    
+    
+    }
+    body{
+        height: 60px;
+        
+    }
+    .d{
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   #email,#password{
+    border-radius: 10px;
+   }
+    .pro{
+        text-align: right ;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+    
+    }
+    h1{
+        text-align: center;
+        justify-content: center ;
+        font-size: 50px; 
+    }
+    h2{
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    img{
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+    }
+    a{
+        font-size: 15px;
+        text-decoration: none;
+    }
+    .form1{
+        margin-top: 50px;
+        margin-left: 400px;
+        margin-right: 400px;
+        border: 1px solid black;
+        border-radius: 50px;
+        font-size: 25px;
+        padding: 50px;
+        
+        box-shadow: 10px 10px 50px black;
+        transition-duration: 1s;
+
+    }
+    .form1:hover{
+        animation: spin 1s ease-out  2s  infinite red;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .box2{
+        font-size: 20px;
+    }
+    

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="continer">
+        <div class="nav" style="display: flex; justify-content: space-between;">
+            <h2 style="margin: 15px;">welcome {{name}} </h2>
+            <div class="nav-b"  style="margin: 15px; font-size: 20px;">
+                <a href={{url_for(home)}}>home|</a>
+       e         <a href="***">search|</a>
+                <a href="***">summary|</a>
+                <a href="{{url_for(login)}}">Logout</a>
+            </div>
+        </div>
+
+       <div class="form" style="display: flex; justify-content: end; margin: 40px;">
+        <form action="/search" method="POST" >
+            <label for="search_by">Search by:</label>
+            <select name="search_by" id="search_by">
+                <option value="service">Service name</option>
+                <option value="pincode">Pin code</option>
+            </select>
+            <input type="text" name="search_text" placeholder="search text (e.g., Salon)">
+            <button type="submit">Search</button>
+        </form>
+       </div>
+
+        
+        
+
+    </div>
+</body>
+</html>

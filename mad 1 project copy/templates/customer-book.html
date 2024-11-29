@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book</title>
+</head>
+<body>
+    <div class="continer">
+        <div class="nav" style="display: flex; justify-content: space-between; font-size: 30px;">
+            <h2 style="margin: 15px;">welcome {{name}}</h2>
+            <div class="nav-b"  style="margin: 15px;">
+                <a href="***">home|</a>
+                <a href="***">search|</a>
+                <a href="***">summary|</a>
+                <a href="{{url_for(login)}}">Logout</a>
+            </div>
+        </div>
+
+        <div class="booking" style="display: flex; justify-content: center; margin: 40px;">
+            <table style="border: 1px solid black;">
+                {%for i in s%}
+                <tr style="border: 1px solid black;">
+                    
+                       <td style="border: 1px solid black;">{{i.discription}},price is {{i.price}}</td>
+                       <td><a href="{{url_for(b,bid=i.id)}}">book</a></td>
+                   
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        </div>
+</body>
+</html>

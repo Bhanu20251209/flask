@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="continer">
+      <div class="nav" style="display: flex; justify-content:space-between; margin: 20px; font-size: 25px;">
+        <div class="welcome">Welcome Admin</div>
+        <div class="navbar">
+            <a href={{url_for(admin)}}>Home</a>|
+            <a href="">Search</a>|
+            <a href="">Summary</a>|
+            <a href={{url_for(login)}}>Logout</a>
+        </div>
+      </div>
+    <div class="service_table">
+        <table style="border: 1px solid black;">
+            <tr >
+                <th style="border: 1px solid black;">id</th>
+                <th style="border: 1px solid black;">ServiceName</th>
+                <th style="border: 1px solid black;">Baseprice</th>
+                <th style="border: 1px solid black;">Action</th>
+            </tr>
+            {%for s in service%}
+            <tr>
+                <td style="border: 1px solid black;">{{s.id}}</td>
+                <td style="border: 1px solid black;">{{s.name}}</td>
+                <td style="border: 1px solid black;">{{s.price}}</td>
+                <td style="border: 1px solid black;"><a href='*****'>Edit</a>/ <a href={{url_for(delete,service_id=s.id)}}>Delete</a>
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+        <div class="newservice" style="display: flex; flex-direction: row-reverse;"><a href={{url_for(new)}}>+add newservice</a></div>
+    </div>
+    <div class="servicer">
+        <table>
+            <tr>
+                <th style="border: 1px solid black;">id</th>
+                <th style="border: 1px solid black;">Name</th>
+                <th style="border: 1px solid black;">Experience</th>
+                <th style="border: 1px solid black;">Service Name</th>
+                <th style="border: 1px solid black;">Action</th>
+            </tr>
+            {%for d in prof%}
+            <tr>
+                <td style="border: 1px solid black;">{{prof.index(d)+1}}</td>
+                <td style="border: 1px solid black;">{{d.fullname}}</td>
+                <td style="border: 1px solid black;">{{d.experience}}</td>
+                <td style="border: 1px solid black;">{{d.service}}</td>
+                <td style="border: 1px solid black;">
+                 <a href={{url_for(approve,id=prof.index(d))}}>Approve</a>
+                 <a href="">Reject</a>
+                 <a href="">Delete</a>
+
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    </div>
+</body>
+</html>

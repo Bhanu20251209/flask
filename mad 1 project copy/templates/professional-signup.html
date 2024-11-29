@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer signup</title>
+</head>
+<body>
+    <div class="container">
+        <div class="customer">
+            <h2>Service Profissional Signup</h2>
+            <form  method="POST" enctype="multipart/form-data">
+                <label for="fullname">Full name:</label>
+                <input type="text" name="fullname" required>
+                <br>
+                <label for="email">Email id:</label>
+                <input type="email" name="email" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" >  
+                <br>
+                <label for="phone">Phone No:</label>
+                <input type="tel" name="phone" maxlength="10">
+                <br>
+                <label for="services">Service name:</label>
+                <select name="services" >
+                   {%for s in services%}
+                   <option value='{{s.name}}'>{{s.name}}</option>
+                   {%endfor%}
+                </select>
+                <br>
+                <label for="exp">exprience:</label>
+                <input type="number" name="exp" >
+                <br>
+                <label for="file">attach documents:</label>
+                <input type="file" name="file" >
+                <div class="addr" style="display: flex;">
+                <label for="address">Address:</label>
+                <textarea name="address" rows="5" ></textarea>
+                </div>
+                <label for="pincode">Pincode</label>
+                <input type="number" name="pincode" >
+                <br>
+                <input type="submit" value="Register">
+            </form>
+            <a href="{{url_for(login)}}">login here</a>
+        </div>
+    </div>
+</body>
+</html>
