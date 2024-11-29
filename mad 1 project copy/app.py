@@ -109,9 +109,9 @@ def servicer__details():
         return "seccses"
     else:
         return "error"
-@app.route('/Service_Professional/Dashbord',methods=['POST','GET'])
-def service_professional_dashbord():
-    b=
+#@app.route('/Service_Professional/Dashbord',methods=['POST','GET'])
+#def service_professional_dashbord():
+ #   b=
 @app.route('/Approve/<int:id>', methods=['GET'])
 def approve_info(id):
         d=prof[id]

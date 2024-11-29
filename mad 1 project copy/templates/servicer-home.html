@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="servicer-home.css">
     <title>Document</title>
 </head>
 <body>
     <div class="continer">
         <div class="nav" style="display: flex; justify-content: space-between; font-size: 30px;">
-            <h2 style="margin: 15px;">welcome {{name}}</h2>
+            <h2 style="margin: 15px;">Welcome {{name}}!!</h2>
             <div class="nav-b"  style="margin: 15px;">
-                <a href="***">home|</a>
-                <a href="***">search|</a>
-                <a href="***">summary|</a>
+                <a href="***">Home</a>
+                <a href="***">Search</a>
+                <a href="***">Summary</a>
                 <a href="{{url_for(login)}}">Logout</a>
             </div>
         </div>
         <div class="bookings">
             <table>
                 <tr>
-                    <th>id</th>
-                    <th>customer name</th>
-                    <th>contact number</th>
-                    <th>address</th>
-                    <th>action</th>
+                    <th>Id</th>
+                    <th>Customer Name</th>
+                    <th>Contact Number</th>
+                    <th>Address</th>
+                    <th>Action</th>
                 </tr>
                 {%for i in b%}
                 <tr>

@@ -1,0 +1,71 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    margin: 10px;
+    padding: 0;
+}
+.container {
+    width: 90%;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+.nav {
+    background-color: #ada7a7;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.nav h2 {
+    margin: 0;
+}
+
+.nav-b a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.nav-b a:hover {
+    text-decoration: underline;
+}
+
+.bookings {
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bookings table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bookings th, 
+.bookings td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.bookings th {
+    background-color: #007bff;
+    color: white;
+}
+.bookings tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.bookings tr:hover {
+    background-color: #f1f1f1;
+}
+.bookings td a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bookings td a:hover {
+    text-decoration:double;
+}

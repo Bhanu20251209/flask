@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="customer-search.css">
     <title>Document</title>
 </head>
 <body>
@@ -10,9 +11,9 @@
         <div class="nav" style="display: flex; justify-content: space-between;">
             <h2 style="margin: 15px;">welcome {{name}} </h2>
             <div class="nav-b"  style="margin: 15px; font-size: 20px;">
-                <a href={{url_for(home)}}>home|</a>
-       e         <a href="***">search|</a>
-                <a href="***">summary|</a>
+                <a href={{url_for(home)}}>home</a>
+                <a href="***">search</a>
+                <a href="***">summary</a>
                 <a href="{{url_for(login)}}">Logout</a>
             </div>
         </div>

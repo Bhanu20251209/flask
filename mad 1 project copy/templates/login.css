@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.d img {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 150px;
+}
+
+.d h1 {
+    text-align: center;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.form1 h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.box input[type="email"],
+.box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.pro, .box a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.pro:hover, 
+.box a:hover {
+    text-decoration: underline;
+}
+
+.messages {
+    margin-top: 20px;
+}
+
+.messages div {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    margin-bottom: 10px;
+}
