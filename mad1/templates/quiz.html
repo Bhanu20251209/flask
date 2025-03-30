@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Management</title>
+    <style>
+        /* Dark Theme */
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: #1e1e1e;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+
+        .navbar a {
+            color: #00ff7f;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            text-shadow: 0 0 10px #00ff7f;
+        }
+
+        .search-bar {
+            background: #222;
+            border: 2px solid #00ffff;
+            padding: 5px 10px;
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        .welcome {
+            background: #008cff;
+            padding: 5px 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #008cff;
+        }
+
+        /* Quiz Management */
+        .quiz-container {
+            display: flex;
+            flex-grow: 1;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .quiz-box {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 45%;
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 2px solid #00ffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #008cff;
+        }
+
+        .add-question {
+            background: #ff4c4c;
+            padding: 10px;
+            color: #fff;
+            border-radius: 5px;
+            display: block;
+            margin: 10px auto;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 0 10px #ff4c4c;
+            cursor: pointer;
+        }
+
+        .add-question:hover {
+            background: #cc0000;
+            box-shadow: 0 0 15px #ff4c4c;
+        }
+
+        /* New Quiz Button */
+        .new-quiz {
+            background: #00ff7f;
+            padding: 15px;
+            color: #000;
+            border-radius: 5px;
+            display: block;
+            margin: 30px auto;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 10px #00ff7f;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .new-quiz:hover {
+            background: #00cc66;
+            box-shadow: 0 0 15px #00ff7f;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="navbar">
+        <div>
+            <a href="{{url_for(home)}}">Home</a> |
+            <a href="/">Quiz</a> |
+            <a href="#">Summary</a> |
+            <a href="#">Logout</a>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search quiz...">
+        <div class="welcome">Welcome, Admin</div>
+    </div>
+
+    <h2 style="text-align:center; margin-top: 20px; text-shadow: 0 0 10px #ff9800;">Quiz Management</h2>
+
+    <!-- Quiz Lists -->
+    <div class="quiz-container">
+        <!-- Quiz 1 -->
+       {%if chapter%}
+            {%for data in chapter%}
+            <div class="quiz-box">
+              
+                <h3>{{data.chapter_name}}</h3>
+                {%if question and data.id in l%}
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Q_Title</th>
+                        <th>Action</th>
+                    </tr>
+                   {%for i in question%}
+                       {%if i.chapter_id==data.id%}
+                       <tr>
+                        <td>{{question.index(i)+1}}</td>
+                        <td>{{i.title}}</td>
+                        <td> <a href="{{ url_for(edit, id=i.id,name='questions') }}">edit</a> / <a href="{{ url_for(delete, id=i.id,name='questions') }}">delete</a></td>
+                       </tr>
+                       {%endif%}
+                   {%endfor%}
+                </table>
+                {%else%}
+                    <div>empty</div>
+                {%endif%}
+                <button type="button" class="add-question" onclick="window.location.href='{{url_for(addq,id=data.id)}}'">+qustion</button>
+            </div>
+               
+            {%endfor%}
+       {%else%}
+           <div>empty</div>
+       {%endif%}
+
+        </div>
+    <!-- Add New Quiz -->
+    <div class="new-quiz">+ New Quiz</div>
+</body>
+</html>

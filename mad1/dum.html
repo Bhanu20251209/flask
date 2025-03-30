@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light background for contrast */
+        }
+
+        .header {
+            background-color: #3498db; /* Blue header */
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .dashboard-content {
+            padding: 20px;
+        }
+
+        .quiz-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-table th, .quiz-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .quiz-table th {
+            background-color: #f2f2f2;
+        }
+
+        .quiz-table .action-buttons button {
+            padding: 8px 12px;
+            margin-right: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .quiz-table .action-buttons button:first-child {
+            background-color: #3498db; /* Blue for View */
+            color: white;
+        }
+
+        .quiz-table .action-buttons button:last-child {
+            background-color: #2ecc71; /* Green for Start */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Scores</a>
+            <a href="#">Summary</a>
+            <a href="#">Logout</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="welcome-message">
+            Welcome User
+        </div>
+    </div>
+
+    <div class="dashboard-content">
+        <h2>Upcoming Quizzes</h2>
+        <table class="quiz-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>No. of Questions</th>
+                    <th>Date</th>
+                    <th>Duration (hh:mm)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>2024-10-27</td>
+                    <td>00:10</td>
+                    <td class="action-buttons">
+                        <button>View</button>
+                        <button>Start</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>10</td>
+                    <td>2024-10-28</td>
+                    <td>00:10</td>
+                    <td class="action-buttons">
+                        <button>View</button>
+                        <button>Start</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>15</td>
+                    <td>2024-10-29</td>
+                    <td>00:30</td>
+                    <td class="action-buttons">
+                        <button>View</button>
+                        <button>Start</button>
+                    </td>
+                </tr>
+                </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Subject</title>
+    <style>
+        /* Dark Theme */
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            text-align: center;
+        }
+
+        h2 {
+            color: #ff9800;
+            text-shadow: 0 0 10px #ff9800;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            background: #222;
+            border: 2px solid #00ffff;
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 0 0 10px #00ffff;
+            border-radius: 10px;
+        }
+
+        textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        .note {
+            color: #ff4c4c;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 45%;
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .save {
+            background: #00ff7f;
+            color: #000;
+            box-shadow: 0 0 10px #00ff7f;
+        }
+
+        .save:hover {
+            background: #00cc66;
+            box-shadow: 0 0 15px #00ff7f;
+        }
+
+        .cancel {
+            background: #ff4c4c;
+            color: #fff;
+            box-shadow: 0 0 10px #ff4c4c;
+        }
+
+        .cancel:hover {
+            background: #cc0000;
+            box-shadow: 0 0 15px #ff4c4c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>New Subject</h2>
+       <form action="" method="post">
+        <label>Name:</label>
+        <input name="subject" type="text" placeholder="Enter subject name" value="{{ oldsub.subject_name if oldsub and oldsub.subject_name else '' }}" required>
+        
+        <label>Description:</label>
+        <textarea name="discription" placeholder="Enter subject description" required > {{ oldsub.discription if oldsub and oldsub.subject_name else ''  }}</textarea>
+        
+        
+        
+        <div class="buttons">
+            <button type="submit" class="save">Save</button>
+            <button type="button" class="cancel" onclick="window.location.href='{{url_for(h)}}'">Cancel</button>
+        </div>
+       </form>
+    </div>
+
+</body>
+</html>

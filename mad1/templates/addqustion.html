@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question</title>
+    <style>
+        /* Dark Theme */
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff9800;
+            text-shadow: 0 0 10px #ff9800;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        input, textarea, select {
+            width: 90%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #00ffff;
+            background: #222;
+            color: #fff;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 10px;
+            gap: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 0 10px;
+        }
+
+        .save-btn {
+            background: #00ff7f;
+            box-shadow: 0 0 10px #00ff7f;
+            border: none;
+        }
+
+        .close-btn {
+            background: #ff4c4c;
+            box-shadow: 0 0 10px #ff4c4c;
+            border: none;
+        }
+
+        .save-btn:hover {
+            background: #00cc66;
+            box-shadow: 0 0 15px #00ff7f;
+        }
+
+        .close-btn:hover {
+            background: #cc0000;
+            box-shadow: 0 0 15px #ff4c4c;
+        }
+    </style>
+</head>
+<body>
+   <form action="" method="post">
+    <div class="container">
+        <h2>New Question</h2>
+        
+        <label>Chapter ID:{{id}}</label>
+        
+        
+        <label>Question Title:</label>
+        <input name="title" type="text" placeholder="Enter Question Title" value="{{ oldq.title if oldq and oldq.title else '' }}">
+        
+        <label>Question Statement:</label>
+        <textarea name="statement" rows="3" placeholder="Enter the question">{{ oldq.statement if oldq and oldq.statement else '' }}</textarea>
+        
+        <h3 style="color: #ff9800; text-shadow: 0 0 10px #ff9800;">Single Option Correct</h3>
+        <div class="options">
+            <div>
+                <label>Option 1:</label>
+                <input name="option1" type="text" value="{{ oldq.option1 if oldq and oldq.option1 else '' }}">
+            </div>
+            <div>
+                <label>Option 2:</label>
+                <input name="option2" type="text" value="{{ oldq.option2 if oldq and oldq.option2 else '' }}">
+            </div>
+            <div>
+                <label>Option 3:</label>
+                <input name="option3" type="text" value="{{ oldq.option3 if oldq and oldq.option3 else '' }}">
+            </div>
+            <div>
+                <label>Option 4:</label>
+                <input name="option4" type="text" value="{{ oldq.option4 if oldq and oldq.option4 else '' }}">
+            </div>
+        </div>
+        
+        <label>Correct Option:</label>
+        <select name="correct_option" >
+            <option {% if oldq and oldq.correct_option == "1" %}selected{% endif %}>1 </option>
+            <option {% if oldq and oldq.correct_option == "2" %}selected{% endif %}>2</option>
+            <option {% if oldq and oldq.correct_option == "3" %}selected{% endif %}>3</option>
+            <option {% if oldq and oldq.correct_option == "4" %}selected{% endif %}>4</option>
+        </select>
+        
+        <div class="button-container">
+            <button type="submit" class="btn save-btn">Save and Next</button>
+            <button class="btn close-btn">Close</button>
+        </div>
+
+   </form>
+    </div>
+</body>
+</html>
