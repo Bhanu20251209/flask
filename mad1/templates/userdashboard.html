@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserDashboard</title>
+    <style>
+        *{
+            padding: 0px;
+            box-sizing: border-box;
+            margin: 0px;
+        }
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .navbar {
+            background: #1e1e1e;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+        .navbar a {
+            color: #00ff7f;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            text-shadow: 0 0 10px #00ff7f;
+        }
+        .search-bar {
+            background: #222;
+            border: 2px solid #00ffff;
+            padding: 5px 10px;
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: 0 0 10px #00ffff;
+        }
+        .welcome {
+            background: #008cff;
+            padding: 5px 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #008cff;
+        }
+        .Upcoming {
+            padding: 20px;
+            text-align: center;
+        }
+        .card-container {
+            display: flex;
+            flex-grow: 1;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 45%;
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
+            text-align: center;
+            margin: 10px;
+        }
+        .card h3 {
+            color: #ffcc00;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 2px solid #00ffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #008cff;
+        }
+        button{
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-weight: 540;
+        }
+        .view-btn{
+            background-color: #008cff;
+        }
+        .start-btn{
+            background-color: #00ff7f;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <a href="{{url_for(home)}}">Home</a> |
+            <a href="{{url_for(quiz)}}">Quiz</a> |
+            <a href="#">Summary</a> |
+            <a href="#">Logout</a>
+        </div>
+        <input type="text" placeholder="Search" class="search-bar">
+        <span class="welcome">Welcome {}</span>
+        </div>
+        <div class="Upcoming">
+            <h2>Upcoming Quizzes</h2>
+            <div class="Details">
+                <table>
+                    <th>ID</th>
+                    <th>No.of questions</th>
+                    <th>Date</th>
+                    <th>Duration(HH:MM)</th>
+                    <th>Action</th>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button onclick="" class="view-btn">View</button>
+                                <button onclick="" class="start-btn">Start</button>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
