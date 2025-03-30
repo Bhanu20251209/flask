@@ -1,5 +1,0 @@
-   s=servicer(fullname=request.form['fullname'],email=request.form['email'],password=request.form['password'], experience=request.form['exp'],service=request.form['services'],address=request.form['address'],pincode=request.form['pincode'],filename=file.filename,data=file.read())
-        u=User(email=request.form['email'],password=request.form['password'],roll="servicer")
-        db.session.add(s)
-        db.session.add(u)
-        db.session.commit()
