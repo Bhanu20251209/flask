@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        *{
+            padding: 0px;
+            box-sizing: border-box;
+            margin: 0px;
+        }
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .Detailsbar{
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 2rem;
+        }
+        .QuestionNo{
+            width: 10rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .current{
+            background-color: yellow;
+            color: green;
+            padding: 5px 1rem;
+            border-radius: 10px;
+            border: 1px solid green;
+        }
+        .Time{
+            width: 5rem;
+            padding: 0.2rem 1rem;
+            background-color:rgb(0, 145, 255);
+            color: white;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0px 0px 15px rgb(0, 145, 255);
+
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 88vw;
+            height: 50vh;
+            align-items: center;
+            border: 1px solid greenyellow;
+            border-radius: 10px;
+            margin: 5rem 3.5rem;
+            box-shadow: 0px 0px 15px greenyellow;
+        }
+        .Question{
+            border: 1px solid white;
+            padding: 1rem 2rem;
+            min-width: 50%;
+            border-radius: 10px;
+        }
+        .Option{
+            padding: 1rem;
+        }
+        .Operation{
+            display: flex;
+            justify-content: space-between;
+            width: 50vw;
+        }
+        button{
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-weight: 540;
+            background-color: rgb(0, 145, 255);
+        }
+        button:hover{
+            transition-duration: 400ms;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="Detailsbar">
+        <div class="QuestionNo">
+            <h3>Q.NO:</h3>
+            <div class="current">
+                <h4>{}/15</h4>
+            </div>
+        </div>
+        <div class="Time">
+            <h3>10:55</h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="Question">
+            <h2>Question</h2>
+        </div>
+        <form>
+            <div class="Option">
+                
+                <label for="A">1.{}</label>
+                <input type="radio" id="A" value="A" name="option">
+            </div>
+            <div class="Option">
+                
+                <label for="B">2.{}</label>
+                <input type="radio" id="B" value="B" name="option">
+            </div>
+            <div class="Option">
+                
+                <label for="C">3.{}</label>
+                <input type="radio" id="C" value="C" name="option">
+            </div>
+            <div class="Option">
+                
+                <label for="D">4.{}</label>
+                <input type="radio" id="D" value="D" name="option">
+            </div>
+        </form>
+        <div class="Operation">
+            <button onclick="">Save & next</button>
+            <button onclick="">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
